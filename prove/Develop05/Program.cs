@@ -1,9 +1,13 @@
 using System;
 
-class Program
+namespace MindfulnessApp
 {
-    static void Main(string[] args)
+    class Program
     {
-        Console.WriteLine("Hello Develop05 World!");
+        static void Main(string[] args)
+        {
+            MindfulnessApp app = new MindfulnessApp();
+            app.Run();
+        }
     }
 }
