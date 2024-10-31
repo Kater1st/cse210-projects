@@ -1,16 +1,29 @@
-using System;
-
-class Program
+// the Employee interface
+// The C# convention is that interface names begin with an I
+public interface IEmployee
 {
-    static void Main(string[] args)
+    float CalculatePay(); // interface method does not have a body
+}
+
+// a specific implementation of the Employee interface
+public class SalariedEmployee : IEmployee
+{
+    private float salary = 100f;
+
+    public float CalculatePay()
     {
-        Console.Write("What is your first name? ");
-        string firstName = Console.ReadLine();
+        return salary;
+    }
+}
 
-        Console.Write("What is your last name? ");
-        string lastName = Console.ReadLine();
+// another implementation of tbe Employee interface
+public class HourlyEmployee : IEmployee
+{
+    private float rate = 9f;
+    private float hours = 100f;
 
-
-        Console.WriteLine($"Your name is {lastName}, {firstName} {lastName}.");
+    public float CalculatePay()
+    {
+        return rate * hours;
     }
 }
